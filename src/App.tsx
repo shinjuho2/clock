@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
-import { styled } from 'styled-components';
+import { createGlobalStyle, styled } from 'styled-components';
+import { RouterProvider, createBrowserRouter } from "react-router-dom"
+import Clock from './routes/clock';
+import Timer from './routes/timer';
 
-interface clock {
-  hours:number;
-  minutes:number;
-  seconds:number;
-};
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Clock/>,
+  },
+  {
+    path: "/timer",
+    element: <Timer/>,
+  }
+])
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -13,32 +21,22 @@ const Wrapper = styled.div`
   justify-content: center;
 `;
 
-const Day = styled.div`
-  
-`;
-
-const Time = styled.div`
-  
+const GlobalStyles = createGlobalStyle`
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    background-color: #000000;
+    color:white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
 `;
 
 function App() {
-
-  const [time, setTime] = useState<clock[]>([]);
-
-  const date = new Date();
-  const year = date.getFullYear();
-  const month = date.getMonth();
-  const day = date.getDate();
-  const hours = date.getHours();
-  const minutes = date.getMinutes();
-  const seconds = date.getSeconds();
-
-  console.log(date)
-  
   return (
     <Wrapper>
-      <Day>{`${year}-${month}-${day}`}</Day>
-      <Time>{`${hours - 12}:${minutes}:${seconds}`}</Time>
+      <GlobalStyles />
+      <RouterProvider router={router} />
     </Wrapper>
   );
 }
