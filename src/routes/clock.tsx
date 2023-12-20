@@ -20,7 +20,7 @@ export default function Clock() {
   const hours = date.getHours() - 12;
   const minutes = date.getMinutes();
   const seconds = date.getSeconds();
-  
+
   return (
     <Wrapper>
       <Time>{`${year}-${month}-${day}`}</Time>

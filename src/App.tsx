@@ -21,6 +21,17 @@ const Wrapper = styled.div`
   justify-content: center;
 `;
 
+const Button = styled.label`
+  padding: 10px 0px;
+  color: #1d9bf0;
+  text-align: center;
+  border-radius: 20px;
+  border: 1px solid #1d9bf0;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+`
+
 const GlobalStyles = createGlobalStyle`
   * {
     box-sizing: border-box;
@@ -33,9 +44,13 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 function App() {
+
+  const [darkMode, setDarkMode] = useState(false);
+
   return (
     <Wrapper>
-      <GlobalStyles />
+      <Button onClick={() => {setDarkMode(true)}}>DarkMode🔄️</Button>
+      { darkMode ? <GlobalStyles /> : null }
       <RouterProvider router={router} />
     </Wrapper>
   );
