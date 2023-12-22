@@ -3,8 +3,12 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/Button';
+import { useState } from 'react';
 
 function NavBar() {
+
+    const [darkMode, setDarkMode] = useState("")
+
     return (
         <Navbar expand="lg" className="bg-body-tertiary">
             <Container>

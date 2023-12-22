@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { createGlobalStyle, styled } from 'styled-components';
+import React from 'react';
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
 import Clock from './routes/clock';
 import Timer from './routes/timer';
