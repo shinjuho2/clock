@@ -7,7 +7,12 @@ import { useState } from 'react';
 
 function NavBar() {
 
-    const [darkMode] = useState("lightmode")
+    const [darkMode, setDarkMode] = useState(false);
+    const darkModeHandler = () => {
+        setDarkMode(!darkMode)
+    };
+
+    console.log(darkMode)
 
     return (
         <Navbar expand="lg" className="bg-body-tertiary">
@@ -29,7 +34,7 @@ function NavBar() {
                                 Separated link
                             </NavDropdown.Item>
                         </NavDropdown>
-                        <Button onClick={() => {darkMode == "lightmode" ? <lightMode/> : <darkMode/>}}>DarkMode🔄️</Button>
+                        <Button onClick={() => {darkModeHandler}}>DarkMode🔄️</Button>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
