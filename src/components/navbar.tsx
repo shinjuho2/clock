@@ -34,7 +34,7 @@ function NavBar() {
                                 Separated link
                             </NavDropdown.Item>
                         </NavDropdown>
-                        <Button onClick={() => {darkModeHandler}}>DarkMode🔄️</Button>
+                        <Button onClick={darkModeHandler}>DarkMode🔄️</Button>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
