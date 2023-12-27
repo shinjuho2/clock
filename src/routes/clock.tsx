@@ -1,15 +1,5 @@
 import React from 'react';
-import { styled } from 'styled-components';
-
-const Wrapper = styled.div`
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-`;
-
-const Time = styled.div`
-  
-`;
+import { Time, Wrapper } from '../styled-components/styledClock';
 
 export default function Clock() {
 
@@ -17,7 +7,7 @@ export default function Clock() {
   const year = date.getFullYear();
   const month = date.getMonth() + 1;
   const day = date.getDate();
-  const hours = date.getHours() - 12;
+  const hours = date.getHours();
   const minutes = date.getMinutes();
   const seconds = date.getSeconds();
 
