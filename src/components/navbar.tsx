@@ -8,8 +8,9 @@ function NavBar() {
   const darkModeHandler = () => {
     setDarkMode(!darkMode)
   };
-  
 
+
+  
   return (
     <ThemeProvider theme={darkMode ? N.darkTheme : N.lightTheme}>
       <N.NavBarContainer>
