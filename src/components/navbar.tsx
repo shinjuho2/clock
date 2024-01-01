@@ -10,6 +10,7 @@ function NavBar() {
   };
   
   
+  
   return (
     <ThemeProvider theme={darkMode ? N.darkTheme : N.lightTheme}>
       <N.NavBarContainer>
