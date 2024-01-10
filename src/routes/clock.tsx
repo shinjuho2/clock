@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Time, Wrapper } from '../styled-components/styledClock';
 
 export default function Clock() {
+
+  const [clock, setClock] = useState('');
 
   const date = new Date();
   const year = date.getFullYear();
