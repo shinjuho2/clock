@@ -28,3 +28,13 @@ export const Time = styled.p`
   font-size: 24px;
   color: #333;
 `;
+
+export const TimerContainer = styled.div`
+  text-align: center;
+  margin-top: 20px;
+`;
+
+export const TimerText = styled.p`
+  font-size: 24px;
+  color: #333;
+`;
