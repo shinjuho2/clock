@@ -4,6 +4,7 @@ import { TimerContainer } from './../styled-components/styledClock';
 
 export default function Timer() {
     const [sec, setSec] = useState(0);
+    
     return(
         <H.TimerContainer>
           <H.TimerText></H.TimerText>
