@@ -17,7 +17,7 @@ export default function Timer() {
 
     return(
         <H.TimerContainer>
-          <H.TimerText>{Timer}</H.TimerText>
+          <H.TimerText>{`Timer: ${sec} seconds`}</H.TimerText>
         </H.TimerContainer>
     )
 }
