@@ -14,6 +14,7 @@ export default function Timer() {
     }, []);
   
     const Timer = new Date(sec * 1000).toISOString().substring(11, 8);
+    
 
     return(
         <H.TimerContainer>
