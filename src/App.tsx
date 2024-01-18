@@ -1,7 +1,7 @@
 import React from 'react';
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
 import Clock from './routes/clock';
-import Timer from './routes/timer';
+import Timer from './routes/stopwatch';
 import NavBar from './components/navbar';
 import * as H from './styled-components/styledClock';
 
