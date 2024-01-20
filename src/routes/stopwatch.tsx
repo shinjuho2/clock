@@ -33,9 +33,19 @@ export default function Timer() {
   
     const formattedTime = new Date(time * 1000).toISOString().substr(11, 8);
   
-    return(
-        <H.TimerContainer>
-          <H.TimerText></H.TimerText>
-        </H.TimerContainer>
-    )
+    return (
+      <StopwatchContainer>
+        <StopwatchText>{`Time: ${formattedTime}`}</StopwatchText>
+        <StopwatchButton onClick={handleToggle}>{isRunning ? 'Pause' : 'Start'}</StopwatchButton>
+        <StopwatchButton onClick={handleLap} disabled={!isRunning}>
+          Lap
+        </StopwatchButton>
+        <StopwatchButton onClick={handleReset}>Reset</StopwatchButton>
+        <ul>
+          {lapTimes.map((lapTime, index) => (
+            <li key={index}>{`Lap ${index + 1}: ${new Date(lapTime * 1000).toISOString().substr(11, 8)}`}</li>
+          ))}
+        </ul>
+      </StopwatchContainer>
+    );
 }
