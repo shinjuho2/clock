@@ -31,21 +31,21 @@ export default function Timer() {
       setLapTimes([]);
     };
   
-    const formattedTime = new Date(time * 1000).toISOString().substr(11, 8);
+    const formattedTime = new Date(time * 1000).toISOString().substring(11, 8);
   
     return (
-      <StopwatchContainer>
-        <StopwatchText>{`Time: ${formattedTime}`}</StopwatchText>
-        <StopwatchButton onClick={handleToggle}>{isRunning ? 'Pause' : 'Start'}</StopwatchButton>
-        <StopwatchButton onClick={handleLap} disabled={!isRunning}>
+      <H.StopwatchContainer>
+        <H.StopwatchText>{`Time: ${formattedTime}`}</H.StopwatchText>
+        <H.StopwatchButton onClick={handleToggle}>{isRunning ? 'Pause' : 'Start'}</H.StopwatchButton>
+        <H.StopwatchButton onClick={handleLap} disabled={!isRunning}>
           Lap
-        </StopwatchButton>
-        <StopwatchButton onClick={handleReset}>Reset</StopwatchButton>
+        </H.StopwatchButton>
+        <H.StopwatchButton onClick={handleReset}>Reset</H.StopwatchButton>
         <ul>
           {lapTimes.map((lapTime, index) => (
-            <li key={index}>{`Lap ${index + 1}: ${new Date(lapTime * 1000).toISOString().substr(11, 8)}`}</li>
+            <li key={index}>{`Lap ${index + 1}: ${new Date(lapTime * 1000).toISOString().substring(11, 8)}`}</li>
           ))}
         </ul>
-      </StopwatchContainer>
+      </H.StopwatchContainer>
     );
 }

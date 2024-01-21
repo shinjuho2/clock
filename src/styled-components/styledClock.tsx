@@ -38,3 +38,24 @@ export const TimerText = styled.p`
   font-size: 24px;
   color: #333;
 `;
+
+export const StopwatchContainer = styled.div`
+  text-align: center;
+  margin-top: 20px;
+`;
+
+export const StopwatchText = styled.p`
+  font-size: 24px;
+  color: #333;
+`;
+
+export const StopwatchButton = styled.button`
+  font-size: 16px;
+  margin: 0 10px;
+  padding: 8px 16px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+`;
