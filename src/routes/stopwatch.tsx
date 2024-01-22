@@ -11,8 +11,8 @@ export default function Timer() {
   
       if (isRunning) {
         intervalId = setInterval(() => {
-          setTime((prevTime) => prevTime + 1);
-        }, 1000);
+          setTime((prevTime) => prevTime + 10); // 10밀리초 단위로 변경
+        }, 10);
       }
   
       return () => clearInterval(intervalId);
@@ -31,21 +31,28 @@ export default function Timer() {
       setLapTimes([]);
     };
   
-    const formattedTime = new Date(time * 1000).toISOString().substring(11, 8);
+    const formattedTime = (time: number = 0) => {
+      const minutes = Math.floor(time / (60 * 100));
+      const seconds = Math.floor((time % (60 * 100)) / 100);
+      const milliseconds = time % 100;
+  
+      return `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}.${milliseconds < 10 ? '0' : ''}${milliseconds}`;
+    };
+  
   
     return (
       <H.StopwatchContainer>
-        <H.StopwatchText>{`Time: ${formattedTime}`}</H.StopwatchText>
-        <H.StopwatchButton onClick={handleToggle}>{isRunning ? 'Pause' : 'Start'}</H.StopwatchButton>
-        <H.StopwatchButton onClick={handleLap} disabled={!isRunning}>
-          Lap
-        </H.StopwatchButton>
-        <H.StopwatchButton onClick={handleReset}>Reset</H.StopwatchButton>
-        <ul>
-          {lapTimes.map((lapTime, index) => (
-            <li key={index}>{`Lap ${index + 1}: ${new Date(lapTime * 1000).toISOString().substring(11, 8)}`}</li>
-          ))}
-        </ul>
-      </H.StopwatchContainer>
+      <H.StopwatchText>{`Time: ${formattedTime(time)}`}</H.StopwatchText>
+      <H.StopwatchButton onClick={handleToggle}>{isRunning ? 'Pause' : 'Start'}</H.StopwatchButton>
+      <H.StopwatchButton onClick={handleLap} disabled={!isRunning}>
+        Lap
+      </H.StopwatchButton>
+      <H.StopwatchButton onClick={handleReset}>Reset</H.StopwatchButton>
+      <ul>
+        {lapTimes.map((lapTime, index) => (
+          <li key={index}>{`Lap ${index + 1}: ${formattedTime(lapTime)}`}</li>
+        ))}
+      </ul>
+    </H.StopwatchContainer>
     );
 }
