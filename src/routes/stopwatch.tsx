@@ -35,11 +35,9 @@ export default function Timer() {
       const minutes = Math.floor(time / (60 * 100));
       const seconds = Math.floor((time % (60 * 100)) / 100);
       const milliseconds = time % 100;
-  
       return `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}.${milliseconds < 10 ? '0' : ''}${milliseconds}`;
     };
-  
-  
+
     return (
       <H.StopwatchContainer>
       <H.StopwatchText>{`Time: ${formattedTime(time)}`}</H.StopwatchText>
