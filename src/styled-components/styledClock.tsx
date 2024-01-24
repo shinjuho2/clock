@@ -53,7 +53,7 @@ export const StopwatchButton = styled.button`
   font-size: 16px;
   margin: 0 10px;
   padding: 8px 16px;
-  background-color: #4caf50;
+  background-color: #57c65b;
   color: #fff;
   border: none;
   border-radius: 4px;
