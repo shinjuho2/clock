@@ -11,7 +11,7 @@ export default function Timer() {
   
       if (isRunning) {
         intervalId = setInterval(() => {
-          setTime((prevTime) => prevTime + 10); // 10밀리초 단위로 변경
+          setTime((prevTime) => prevTime + 10);
         }, 10);
       }
   
