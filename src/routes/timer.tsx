@@ -5,6 +5,10 @@ export default function Timer() {
     const [minutes, setMinutes] = useState<number>(0);
     const [seconds, setSeconds] = useState<number>(0);
     const [timerOn, setTimerOn] = useState<boolean>(false);
-    
-    return <h1>timer</h1>    
+
+    return (
+        <div>
+            
+        </div>
+    );
 }
