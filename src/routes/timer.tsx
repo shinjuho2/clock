@@ -8,46 +8,65 @@ export default function Timer() {
 
     useEffect(() => {
         let intervalId: NodeJS.Timeout;
-    
+
         if (timerOn) {
-          intervalId = setInterval(() => {
-            if (seconds === 0 && minutes === 0 && hours === 0) {
-              clearInterval(intervalId);
-              setTimerOn(false);
-              alert('타이머가 종료되었습니다.');
-            } else if (seconds === 0 && minutes === 0) {
-              setHours((prevHours) => prevHours - 1);
-              setMinutes(59);
-              setSeconds(59);
-            } else if (seconds === 0) {
-              setMinutes((prevMinutes) => prevMinutes - 1);
-              setSeconds(59);
-            } else {
-              setSeconds((prevSeconds) => prevSeconds - 1);
-            }
-          }, 1000);
+            intervalId = setInterval(() => {
+                if (seconds === 0 && minutes === 0 && hours === 0) {
+                    clearInterval(intervalId);
+                    setTimerOn(false);
+                    alert('타이머가 종료되었습니다.');
+                } else if (seconds === 0 && minutes === 0) {
+                    setHours((prevHours) => prevHours - 1);
+                    setMinutes(59);
+                    setSeconds(59);
+                } else if (seconds === 0) {
+                    setMinutes((prevMinutes) => prevMinutes - 1);
+                    setSeconds(59);
+                } else {
+                    setSeconds((prevSeconds) => prevSeconds - 1);
+                }
+            }, 1000);
         }
-    
+
         return () => clearInterval(intervalId);
-      }, [timerOn, seconds, minutes, hours]);
-    
-      const handleStart = () => {
+    }, [timerOn, seconds, minutes, hours]);
+
+    const handleStart = () => {
         setTimerOn(true);
-      };
-    
-      const handleStop = () => {
+    };
+
+    const handleStop = () => {
         setTimerOn(false);
-      };
-    
-      const handleReset = () => {
+    };
+
+    const handleReset = () => {
         setTimerOn(false);
         setHours(0);
         setMinutes(0);
         setSeconds(0);
-      };
+    };
 
     return (
         <div>
+            <div>
+                <label>
+                    Hours:
+                    <input type="number" value={hours} onChange={(e) => setHours(parseInt(e.target.value))} />
+                </label>
+                <label>
+                    Minutes:
+                    <input type="number" value={minutes} onChange={(e) => setMinutes(parseInt(e.target.value))} />
+                </label>
+                <label>
+                    Seconds:
+                    <input type="number" value={seconds} onChange={(e) => setSeconds(parseInt(e.target.value))} />
+                </label>
+            </div>
+            <div>
+                <button onClick={handleStart}>Start</button>
+                <button onClick={handleStop}>Stop</button>
+                <button onClick={handleReset}>Reset</button>
+            </div>
         </div>
     );
 }
