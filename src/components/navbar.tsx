@@ -16,6 +16,7 @@ function NavBar() {
           <a href="/">Home</a>
           <a href="/">Clock</a>
           <a href="/timer">Timer</a>
+          <a href="/Stopwatch">Stopwatch</a>
         </N.NavItems>
         <N.DarkModeToggle onClick={darkModeHandler} >
           {darkMode ? 'Light Mode🔄️' : 'Dark Mode🔄️'}
