@@ -37,6 +37,7 @@ export default function Stopwatch() {
       const milliseconds = time % 100;
       return `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}.${milliseconds < 10 ? '0' : ''}${milliseconds}`;
     };
+    
 
     return (
       <H.StopwatchContainer>
