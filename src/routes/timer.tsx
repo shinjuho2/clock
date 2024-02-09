@@ -20,6 +20,7 @@ const TimerButton = styled.button`
   cursor: pointer;
 `;
 
+
 const Timer: React.FC = () => {
   const [hours, setHours] = useState<number>(0);
   const [minutes, setMinutes] = useState<number>(0);
