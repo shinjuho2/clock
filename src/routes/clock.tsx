@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import * as H from '../styled-components/styledClock';
 
 export default function Clock() {
-
   const [clock, setClock] = useState(new Date());
 
   useEffect(() => {
