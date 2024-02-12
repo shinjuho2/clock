@@ -20,7 +20,7 @@ const TimerButton = styled.button`
   cursor: pointer;
 `;
 
-const Timer: React.FC = () => {
+export default function Timer(){
   const [hours, setHours] = useState<number>(0);
   const [minutes, setMinutes] = useState<number>(0);
   const [seconds, setSeconds] = useState<number>(0);
@@ -90,5 +90,3 @@ const Timer: React.FC = () => {
     </TimerContainer>
   );
 };
-
-export default Timer;
