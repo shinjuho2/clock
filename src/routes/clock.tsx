@@ -14,7 +14,7 @@ export default function Clock() {
   const year = clock.getFullYear();
   const month = String(clock.getMonth() + 1).padStart(2, '0');
   const day = String(clock.getDate()).padStart(2, '0');
-  const hours = String(clock.getHours() - 12).padStart(2, '0');
+  const hours = String(clock.getHours()).padStart(2, '0');
   const minutes = String(clock.getMinutes()).padStart(2, '0');
   const seconds = String(clock.getSeconds()).padStart(2, '0');
 
