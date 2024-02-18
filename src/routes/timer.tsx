@@ -27,6 +27,7 @@ export default function Timer(){
   const [timerOn, setTimerOn] = useState<boolean>(false);
 
   useEffect(() => {
+    
     let intervalId: NodeJS.Timeout;
 
     if (timerOn) {
