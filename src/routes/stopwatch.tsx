@@ -2,12 +2,13 @@ import { useEffect, useState } from "react"
 import * as H from '../styled-components/styledClock';
 
 export default function Stopwatch() {
-  
+
     const [time, setTime] = useState(0);
     const [isRunning, setIsRunning] = useState(false);
     const [lapTimes, setLapTimes] = useState<number[]>([]);
 
     useEffect(() => {
+      
       let intervalId: NodeJS.Timeout;
   
       if (isRunning) {
