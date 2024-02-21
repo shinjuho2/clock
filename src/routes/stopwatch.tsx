@@ -8,7 +8,6 @@ export default function Stopwatch() {
     const [lapTimes, setLapTimes] = useState<number[]>([]);
 
     useEffect(() => {
-      
       let intervalId: NodeJS.Timeout;
   
       if (isRunning) {
