@@ -9,7 +9,6 @@ export default function Stopwatch() {
 
     useEffect(() => {
       let intervalId: NodeJS.Timeout;
-  
       if (isRunning) {
         intervalId = setInterval(() => {
           setTime((prevTime) => prevTime + 10);
